@@ -17,12 +17,12 @@ class Mailchimp_Core extends MCAPI {
 	{
 		if ($apikey === NULL)
 		{
-			$apikey = Kohana::config('mailchimp.apikey');
+			$apikey = Kohana::$config->load('mailchimp.apikey');
 		}
 
 		if ($secure === NULL)
 		{
-			$secure = Kohana::config('mailchimp.secure');
+			$secure = Kohana::$config->load('mailchimp.secure');
 		}
 		
 		if ( ! isset(Mailchimp_Core::$_instance[$apikey]))
